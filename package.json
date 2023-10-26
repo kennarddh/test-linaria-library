@@ -2,7 +2,11 @@
 	"name": "reactjs-boilerplate",
 	"version": "1.0.0",
 	"description": "React js boilerplate",
-	"main": "src/index.js",
+	"files": [
+		"build"
+	],
+	"main": "./build/test-linaria-library.umd.js",
+	"module": "./build/test-linaria-library.mjs",
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build",
@@ -70,5 +74,11 @@
 		"@linaria/react": "^5.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
+	},
+	"exports": {
+		".": {
+			"import": "./build/test-linaria-library.mjs",
+			"require": "./build/test-linaria-library.umd.js"
+		}
 	}
 }
