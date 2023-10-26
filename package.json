@@ -5,8 +5,8 @@
 	"files": [
 		"build"
 	],
-	"main": "./build/test-linaria-library.umd.js",
-	"module": "./build/test-linaria-library.mjs",
+	"main": "./build/index.umd.js",
+	"module": "./build/index.mjs",
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build",
@@ -78,8 +78,8 @@
 	},
 	"exports": {
 		".": {
-			"import": "./build/test-linaria-library.mjs",
-			"require": "./build/test-linaria-library.umd.js"
+			"import": "./build/index.mjs",
+			"require": "./build/index.umd.js"
 		}
 	}
 }
