@@ -70,7 +70,7 @@ export default defineConfig(({ mode }) => {
 			outDir: 'build',
 			lib: {
 				// Could also be a dictionary or array of multiple entry points
-				entry: resolve(__dirname, 'src/App.tx'),
+				entry: resolve(__dirname, 'src/App.tsx'),
 				name: 'test-linaria-library',
 				// the proper extensions will be added
 				fileName: 'test-linaria-library',
