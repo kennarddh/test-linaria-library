@@ -1,6 +1,6 @@
 {
 	"name": "@kennarddh/test-linaria-library",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Testing linaria component library",
 	"files": [
 		"build"
