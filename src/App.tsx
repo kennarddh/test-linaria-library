@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { styled } from '@linaria/react'
 
-const App: FC = () => {
-	return <div></div>
-}
+const Container = styled.div<{ color: string }>`
+	background-color: blue;
+	color: ${props => props.color};
+`
 
-export default App
+export default Container
