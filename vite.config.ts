@@ -9,26 +9,6 @@ import svgr from 'vite-plugin-svgr'
 import linaria from '@linaria/vite'
 import { resolve } from 'path'
 
-export const relativeAlias: Record<string, string> = {
-	Components: './src/Components',
-	Contexts: './src/Contexts',
-	Utils: './src/Utils',
-	Hooks: './src/Hooks',
-	Constants: './src/Constants',
-	Api: './src/Api',
-	Pages: './src/Pages',
-}
-
-export const resolveAlias = Object.entries(relativeAlias).reduce(
-	(prev: Record<string, string>, [key, path]) => {
-		// eslint-disable-next-line security/detect-object-injection
-		prev[key] = resolve(__dirname, path)
-
-		return prev
-	},
-	{},
-)
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
 	const envPrefix: string[] = ['APP_']
@@ -60,9 +40,6 @@ export default defineConfig(({ mode }) => {
 			}),
 			dts(),
 		],
-		resolve: {
-			alias: resolveAlias,
-		},
 		server: {
 			port: PORT || 3000,
 			open: OPEN_BROWSER === 'true' ? true : false,
@@ -72,10 +49,10 @@ export default defineConfig(({ mode }) => {
 			outDir: 'build',
 			lib: {
 				// Could also be a dictionary or array of multiple entry points
-				entry: resolve(__dirname, 'src/App.tsx'),
+				entry: resolve(__dirname, 'src/index.tsx'),
 				name: 'test-linaria-library',
 				// the proper extensions will be added
-				fileName: 'test-linaria-library',
+				fileName: 'index',
 			},
 			rollupOptions: {
 				external: [
