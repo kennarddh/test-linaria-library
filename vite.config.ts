@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => {
 				name: 'test-linaria-library',
 				// the proper extensions will be added
 				fileName: 'index',
-				formats: ['umd'],
+				formats: ['es'],
 			},
 			rollupOptions: {
 				external: [
